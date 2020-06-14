@@ -1,0 +1,135 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.neoxia.tests</groupId>
+	<artifactId>SquashTestProjectTemplate</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<!-- Properties definition -->
+	<properties>
+		<!-- Squash-TA framework version used by the project -->
+		<ta.framework.version>1.10.0-RELEASE</ta.framework.version>
+	</properties>
+
+	<build>
+		<plugins>
+			<!-- Configuration of the Squash TA framework used by the project -->
+			<plugin>
+				<groupId>org.squashtest.ta</groupId>
+				<artifactId>squash-ta-maven-plugin</artifactId>
+				<version>${ta.framework.version}</version>
+
+				<!-- Under here is the Squash TA framework default configuration -->
+				<configuration>
+					<!--
+                        Uncomment the line below in order to the build finish in success even if a test failed
+                        (functional (assertion) failure), but fail the build if an ERROR (technical failure) occurred.
+                    -->
+					<!-- <mojoSuccessThreshold>FAIL</mojoSuccessThreshold> -->
+
+					<exporters>
+						<surefire>
+							<jenkinsAttachmentMode>${ta.jenkins.attachment.mode}</jenkinsAttachmentMode>
+						</surefire>
+						<html/>
+					</exporters>
+
+					<!-- Define configurers -->
+					<configurers>
+						<tmCallBack>
+							<endpointURL>${status.update.events.url}</endpointURL>
+							<executionExternalId>${squash.ta.external.id}</executionExternalId>
+							<jobName>${jobname}</jobName>
+							<hostName>${hostname}</hostName>
+							<endpointLoginConfFile>${squash.ta.conf.file}</endpointLoginConfFile>
+							<reportBaseUrl>${ta.tmcallback.reportbaseurl}</reportBaseUrl>
+							<jobExecutionId>${ta.tmcallback.jobexecutionid}</jobExecutionId>
+							<reportName>${ta.tmcallback.reportname}</reportName>
+						</tmCallBack>
+					</configurers>
+
+				</configuration>
+
+				<!-- Bind the Squash TA "run" goal to the maven integration-test phase and reuse the default configuration -->
+				<executions>
+					<execution>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<!-- Squash TA maven repository -->
+	<repositories>
+		<repository>
+			<id>org.squashtest.ta.release</id>
+			<name>squashtest test automation - releases</name>
+			<url>http://repo.squashtest.org/maven2/releases</url>
+		</repository>
+	</repositories>
+
+	<!-- Squash TA maven plugin repository -->
+	<pluginRepositories>
+		<pluginRepository>
+			<id>org.squashtest.plugins.release</id>
+			<name>squashtest.org</name>
+			<url>http://repo.squashtest.org/maven2/releases</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.10</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-api</artifactId>
+			<version>3.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-chrome-driver</artifactId>
+			<version>3.13.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-support</artifactId>
+			<version>3.13.0</version>
+		</dependency>
+	</dependencies>
+
+</project>

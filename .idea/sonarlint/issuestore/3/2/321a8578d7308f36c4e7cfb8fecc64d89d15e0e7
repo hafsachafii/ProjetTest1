@@ -1,0 +1,11 @@
+
+V
+squid:S106 "9Replace this use of System.out or System.err by a logger.(Å³Ôï8ùÓ·‡.
+ósquid:S1845"ÏRename field "dataSet" to prevent any misunderstanding/clash with field "dataset" defined in superclass "squashTA.resources.seleniumTests.src.main.java.org.squashtest.ta.selenium.automatisation.outils.Main".(Øáâûÿÿÿÿ8‰–Ë·‡.
+Tsquid:S2696"6Make the enclosing method "static" or remove this set.(øìæ8‰–Ë·‡.
+esquid:S00112'"FDefine and throw a dedicated exception instead of using a generic one.(«¤ÜÕ8‰–Ë·‡.
+wsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ùÚ‰ûÿÿÿÿÿ
+¤%squid:RedundantThrowsDeclarationCheck'"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(«¤ÜÕ8‰–Ë·‡.
+]squid:S1161":Add the "@Override" annotation above this method signature(•¨ó­úÿÿÿÿ8‰–Ë·‡.
+Wsquid:UselessImportCheck"-Remove this unused import 'org.junit.Assert'.(­ŞL8”¬ø·‡.
+vsquid:S1149"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(¸é¤Ì

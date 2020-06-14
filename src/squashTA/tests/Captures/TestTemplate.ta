@@ -1,0 +1,7 @@
+TEST :
+
+LOAD seleniumTests/src/main AS seleniumTestSource
+CONVERT seleniumTestSource TO script.java (compile) AS seleniumTestCompiled
+CONVERT seleniumTestCompiled TO script.java.selenium2 (script) USING $(squashTA.resources.seleniumTests.src.main.java.org.squashtest.ta.selenium.Captures.TestClass) AS seleniumTest
+EXECUTE execute WITH seleniumTest AS seleniumResult
+ASSERT seleniumResult IS success

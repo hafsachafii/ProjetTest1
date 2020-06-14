@@ -1,0 +1,10 @@
+
+rsquid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÓşÖ
+Rsquid:S2696)"6Make the enclosing method "static" or remove this set.(¸×Ÿäúÿÿÿÿ
+gsquid:CommentedOutCodeLine'"<This block of commented-out lines of code should be removed.(³Úâõıÿÿÿÿ
+Rsquid:S2696%"6Make the enclosing method "static" or remove this set.(¯ƒÊşÿÿÿÿ
+Rsquid:S2696*"6Make the enclosing method "static" or remove this set.(ç»Ú³şÿÿÿÿ
+Rsquid:S1751m"6Remove this "return" statement or make it conditional.(¯î»øûÿÿÿÿ
+Msquid:S2696d"6Make the enclosing method "static" or remove this set.(ª‡²ª
+T
+squid:S106T"9Replace this use of System.out or System.err by a logger.(©şêÜúÿÿÿÿ

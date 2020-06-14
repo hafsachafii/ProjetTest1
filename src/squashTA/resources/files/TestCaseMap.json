@@ -1,0 +1,5 @@
+{
+  "testCaseMap" : [
+    {"casDeTest" : "Auth 01",  "classDeTest": "Captures.TestClass"}
+  ]
+}
